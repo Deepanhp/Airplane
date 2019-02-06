@@ -1,1 +1,6 @@
-<h2>Resend confirmation instructions</h2>
+<h2>Flight seat selector</h2>
+
+<%= form_tag api_v1_seats_path, method: :get do %>
+  <%= text_field_tag :pnr %>
+  <%= submit_tag "Submit" %>
+<% end %>
