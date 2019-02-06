@@ -1,5 +1,5 @@
 class Plane < ApplicationRecord
-	has_many :seats, dependent: :destroy
+has_many :seats, dependent: :destroy
 
 	after_create :create_seats, on: :create
 
@@ -8,13 +8,13 @@ class Plane < ApplicationRecord
 		bc_seats = (self.bc_rows) * (self.bc_row_seats)
 		ec_seats = (self.ec_rows) * (self.ec_row_seats)
 		(1..(fc_seats)).each do 
-			self.seats.create(type: "first_class")		
+			self.seats.create(seat_type: "first_class")		
 		end
 		(1..(bc_seats)).each do 
-			self.seats.create(type: "business_class")		
+			self.seats.create(seat_type: "business_class")		
 		end
 		(1..(ec_seats)).each do 
-			self.seats.create(type: "economy_class")		
+			self.seats.create(seat_type: "economy_class")		
 		end
 	end
 end

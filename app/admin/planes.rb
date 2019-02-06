@@ -3,6 +3,7 @@ ActiveAdmin.register Plane do
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
 # permit_params :list, :of, :attributes, :on, :model
+permit_params :source, :destination, :fc_rows, :fc_row_seats, :bc_rows, :bc_row_seats, :ec_rows, :ec_row_seats
 #
 # or
 #
